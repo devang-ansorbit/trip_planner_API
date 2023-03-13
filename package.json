@@ -1,0 +1,24 @@
+{
+  "name": "trip-planner-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devang-ansorbit/trip-planner-API.git"
+  },
+  "author": "Devang Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devang-ansorbit/trip-planner-API/issues"
+  },
+  "homepage": "https://github.com/devang-ansorbit/trip-planner-API#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.1"
+  }
+}
