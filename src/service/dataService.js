@@ -17,6 +17,7 @@ module.exports.getDataFromDBService = () => {
 module.exports.createDataInDBService = (data) => {
   return new Promise((resolve, reject) => {
     var dataModelData = new dataModel({ ...data });
+    dataModelData
       .save()
       .then((result) => {
         resolve(result);
