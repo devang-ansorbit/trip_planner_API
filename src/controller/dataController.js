@@ -1,10 +1,10 @@
 var dataService = require('../service/dataService');
 
 var getData = async (req, res) => {
-  var data = await dataService.getDataFromDBService();
+  var result = await dataService.getDataFromDBService();
   res.send({
     status: true,
-    data: data,
+    data: result,
   });
 };
 
@@ -17,4 +17,11 @@ var createData = async (req, res) => {
   }
 };
 
-module.exports = { getData, createData };
+var getOneDataById = async (req, res) => {
+  console.log(req.params.id);
+  var result = await dataService.getOneDataById(req.params.id);
+  console.log('Getting reasdult from:', result);
+  res.send({ status: true, data: result });
+};
+
+module.exports = { getData, createData, getOneDataById };

@@ -27,3 +27,16 @@ module.exports.createDataInDBService = (data) => {
       });
   });
 };
+
+module.exports.getOneDataById = (id) => {
+  return new Promise((resolve, reject) => {
+    dataModel
+      .findById(id)
+      .then((result) => {
+        resolve(result);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+};
