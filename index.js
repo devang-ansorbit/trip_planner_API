@@ -24,6 +24,10 @@ app.use(routes);
 
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+  res.send('Hey this is my API running 🥳');
+});
+
 app.listen(8000, function check(error) {
   if (error) {
     console.log('Erro:', error);
