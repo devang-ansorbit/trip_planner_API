@@ -15,5 +15,7 @@ router.route('/prefrence-data').get(prefrenceDataController.getData);
 
 router.route('/prefrence-data/create-data').post(prefrenceDataController.createData);
 
+router.route('/prefrence-data/:id').get(prefrenceDataController.getDataById);
+
 
 module.exports = router;

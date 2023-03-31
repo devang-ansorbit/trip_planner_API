@@ -25,4 +25,14 @@ var createData = async (req, res) => {
     }
 }
 
-module.exports = { getData, createData }
+var getDataById = async ( req, res ) => {
+    var result = await preferenceDataService.getOneDataById(req.params.id);
+    if(result) {
+        res.send({
+            status : true,
+            data : result
+        })
+    }
+}
+
+module.exports = { getData, createData, getDataById }
