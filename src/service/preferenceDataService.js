@@ -39,3 +39,24 @@ module.exports.getOneDataById = (id) => {
       });
   });
 };
+
+module.exports.updateDataById = (id,body) => {
+    console.log("Getting ID and Data From Back-end:", id,body)
+    return new Promise ( (resolve, reject) => {
+        preferenceDataSchema.findByIdAndUpdate(id,body).then((result)=> {
+            resolve(result);
+        }).catch((error) => {
+            reject(error);
+        })
+    })
+}
+
+module.exports.deleteDataById = (id) => {
+    return new Promise ( (resolve, reject) => {
+        preferenceDataSchema.findByIdAndDelete(id).then((result)=> {
+            resolve(result);
+        }).catch( (error) => {
+            reject(error);
+        })
+    })
+}

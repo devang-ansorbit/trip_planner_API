@@ -1,3 +1,4 @@
+const { rmSync } = require('fs');
 var preferenceDataService = require('../service/preferenceDataService');
 
 var getData = async (req, res) => {
@@ -35,4 +36,36 @@ var getDataById = async ( req, res ) => {
     }
 }
 
-module.exports = { getData, createData, getDataById }
+var updateData = async (req, res) => {
+    var result = await preferenceDataService.updateDataById(req.params.id, req.body);
+
+    if(result) {
+        res.send({
+            status: true,
+            message : 'Data is updated succesfully.'
+        })
+    } else {
+        res.send({
+            status: false,
+            message : 'Data is not updated'
+        })
+    }
+}
+
+var deleteData = async (req, res) => {
+    var result = await preferenceDataService.deleteDataById(req.params.id);
+
+    if(result){
+        res.send({
+            status : true,
+            message: 'Data is deleted succesfully'
+        })
+    } else {
+        res.send({
+            status : false,
+            message : 'Data is not deleted'
+        })
+    }
+}
+
+module.exports = { getData, createData, getDataById, updateData, deleteData}

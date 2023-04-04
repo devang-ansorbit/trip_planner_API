@@ -17,5 +17,9 @@ router.route('/prefrence-data/create-data').post(prefrenceDataController.createD
 
 router.route('/prefrence-data/:id').get(prefrenceDataController.getDataById);
 
+router.route('/prefrence-data/update-data/:id').patch(prefrenceDataController.updateData);
+
+router.route('/prefrence-data/delete-data/:id').delete(prefrenceDataController.deleteData);
+
 
 module.exports = router;
