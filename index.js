@@ -5,6 +5,8 @@ var mongoose = require('mongoose');
 var cors = require('cors');
 var routes = require('./src/routes/dataRoute');
 
+const port = process.env.PORT || 8000;
+
 mongoose.set('strictQuery', false);
 
 mongoose.set('strictQuery', false);
@@ -28,7 +30,11 @@ app.get('/', (req, res) => {
   res.send('Hey this is my API running 🥳');
 });
 
-app.listen(8000, function check(error) {
+app.get('/ping',(req, res)=>{
+  res.send('Pong 🍫');
+})
+
+app.listen(port, function check(error) {
   if (error) {
     console.log('Erro:', error);
   } else {
