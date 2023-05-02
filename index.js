@@ -1,9 +1,11 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var cors = require('cors');
 var routes = require('./src/routes/dataRoute');
+
+dotenv.config();
 
 const port = process.env.PORT || 8000;
 
